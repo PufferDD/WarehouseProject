@@ -20491,7 +20491,7 @@ GameObject:
   - component: {fileID: 714922469}
   - component: {fileID: 714922468}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: PropagandaPoster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38398,7 +38398,7 @@ GameObject:
   - component: {fileID: 1359709904}
   - component: {fileID: 1359709903}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: PropagandaPoster3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45814,7 +45814,7 @@ GameObject:
   - component: {fileID: 1608895259}
   - component: {fileID: 1608895258}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: PropagandaPoster2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61542,7 +61542,7 @@ GameObject:
   - component: {fileID: 2145746989}
   - component: {fileID: 2145746988}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: PropagandaPoster4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
