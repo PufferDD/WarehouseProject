@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 147443624179883965}
   - component: {fileID: 1532691164402280648}
   m_Layer: 0
-  m_Name: GameTitle
+  m_Name: GameTitle_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 98.8, y: 26.5}
+  m_AnchoredPosition: {x: 96, y: 30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &147443624179883965
@@ -65,10 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Warehouse
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 748d94e6cbba3d44aa891e5b3f5b2481, type: 2}
-  m_sharedMaterial: {fileID: -6766950180699199146, guid: 748d94e6cbba3d44aa891e5b3f5b2481, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c2a77d3cda06bbd44a35e3abe2691548, type: 2}
+  m_sharedMaterial: {fileID: 2864972000505308816, guid: c2a77d3cda06bbd44a35e3abe2691548, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 94
+  m_fontSizeBase: 94
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 6814506950616058267}
   - component: {fileID: 1738861544989197265}
   m_Layer: 0
-  m_Name: GameTitle_shadow
+  m_Name: GameTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Warehouse
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 748d94e6cbba3d44aa891e5b3f5b2481, type: 2}
-  m_sharedMaterial: {fileID: -6766950180699199146, guid: 748d94e6cbba3d44aa891e5b3f5b2481, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c2a77d3cda06bbd44a35e3abe2691548, type: 2}
+  m_sharedMaterial: {fileID: 2864972000505308816, guid: c2a77d3cda06bbd44a35e3abe2691548, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 94
+  m_fontSizeBase: 94
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
