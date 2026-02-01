@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Starting Game...");
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("OfficeScene"); //remember to add officescene to the scenelist
     }
 
     public void QuitGame()
