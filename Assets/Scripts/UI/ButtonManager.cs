@@ -5,10 +5,13 @@ public class ButtonManager : MonoBehaviour
 {
     public PauseMenuController pauseMenuController;
 
+    // This static variable stays in memory even when switching scenes
+    private static string previousSceneName;
+
     public void StartGame()
     {
         Debug.Log("Starting Game...");
-        SceneManager.LoadScene("OfficeScene"); //remember to add officescene to the scenelist
+        SceneManager.LoadScene("OfficeScene"); 
     }
 
     public void QuitGame()
@@ -31,7 +34,7 @@ public class ButtonManager : MonoBehaviour
         else
         {
             Debug.LogError("Error happened.");
-            Time.timeScale = 1f; // Just in case, try to resume time
+            Time.timeScale = 1f;
         }
     }
 
@@ -40,5 +43,34 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Returning to Main Menu...");
         Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScene");
+    }
+
+    // --- UPDATED SETTINGS MENU LOGIC ---
+    public void SettingMenu()
+    {
+        Debug.Log("Opening Settings Menu...");
+        
+        // 1. Save the current scene name before we leave
+        previousSceneName = SceneManager.GetActiveScene().name;
+        
+        // 2. Load the Settings Scene
+        SceneManager.LoadScene("SettingsMenu");
+    }
+
+    // --- NEW GO BACK LOGIC ---
+    public void GoBack()
+    {
+        Debug.Log("Going back...");
+
+        if (!string.IsNullOrEmpty(previousSceneName))
+        {
+            // Load the scene we came from
+            SceneManager.LoadScene(previousSceneName);
+        }
+        else
+        {
+            // Fallback: If for some reason history is empty, go to Main Menu
+            SceneManager.LoadScene("TitleScene");
+        }
     }
 }

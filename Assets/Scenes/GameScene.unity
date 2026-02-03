@@ -14018,6 +14018,34 @@ PrefabInstance:
       propertyPath: pauseMenuController
       value: 
       objectReference: {fileID: 1777814383}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 490481922}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795790137230003565, guid: c0356d55ba49d1a419465973e97698ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -17091,7 +17119,7 @@ AudioSource:
   m_GameObject: {fileID: 623607260}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9170964713052031370, guid: 01936d6d7e9bf9a42862d8df8a8d3d32, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3892863143a02da44b3ca31fddb98775, type: 3}
   m_PlayOnAwake: 0
@@ -32800,7 +32828,7 @@ AudioSource:
   m_GameObject: {fileID: 1157044958}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4867032259407093653, guid: 01936d6d7e9bf9a42862d8df8a8d3d32, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: daf97d15f684f794a9341b00d60f268a, type: 3}
   m_PlayOnAwake: 1

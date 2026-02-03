@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6132000726881454779}
   - component: {fileID: 6910399237914822969}
   m_Layer: 0
-  m_Name: UI
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151032562718154848, guid: d76952321782b964983e82eabf40ad61, type: 3}
       propertyPath: m_text
-      value: Settings (wip)
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 7196176308388626366, guid: d76952321782b964983e82eabf40ad61, type: 3}
       propertyPath: m_Pivot.x
