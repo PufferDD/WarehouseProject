@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    // Make sure to assign this in the Inspector in your GameScene!
     public PauseMenuController pauseMenuController;
 
     public void StartGame()
