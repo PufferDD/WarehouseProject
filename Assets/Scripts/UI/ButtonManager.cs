@@ -49,7 +49,7 @@ public class ButtonManager : MonoBehaviour
     {
         previousSceneName = SceneManager.GetActiveScene().name;
         
-        if (previousSceneName == "TitleScene") 
+        if (previousSceneName == "TitleScene")  
         {
             // From Title: Just switch scenes normally
             SceneManager.LoadScene("SettingsMenu");
@@ -71,10 +71,24 @@ public class ButtonManager : MonoBehaviour
 
     public void GoBack()
     {
-            //  Remove the settings overlay
+        // Check if there is more than one scene loaded
+        // If sceneCount > 1, it means Settings is an overlay (Additive)
+        if (SceneManager.sceneCount > 1)
+        {
+            Debug.Log("Unloading Settings overlay...");
             SceneManager.UnloadSceneAsync("SettingsMenu");
 
             // Unpause the game (Resume time)
             Time.timeScale = 1f;
-    }
-}
+            
+            // Note: If you locked the cursor in your game, 
+            // you might want to re-lock it here.
+        }
+        else
+        {
+            // If sceneCount is 1, Settings is the ONLY scene open.
+            // We must LOAD the TitleScene instead of unloading.
+            Debug.Log("Returning to Title Scene...");
+            SceneManager.LoadScene("TitleScene");
+        }
+    }}
