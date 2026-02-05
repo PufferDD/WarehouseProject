@@ -30,21 +30,24 @@ public class SettingsMenuController : MonoBehaviour
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
+            // Check for current resolution
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
                 currentResolutionIndex = i;
         }
 
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = PlayerPrefs.GetInt("ResIndex", currentResolutionIndex);
+        // Load index or default to current
+        int savedRes = PlayerPrefs.GetInt("ResIndex", currentResolutionIndex);
+        resolutionDropdown.value = savedRes;
         resolutionDropdown.RefreshShownValue();
     }
 
     void LoadAndApplySettings()
     {
-        // Load Volume (Default to 0.75f if not found)
-        float music = PlayerPrefs.GetFloat("MusicVol", 0);
-        float sfx = PlayerPrefs.GetFloat("SFXVol", 0);
-        float voice = PlayerPrefs.GetFloat("VoiceVol", 0);
+        // Load Volume (Default to 0.75f linear which is 75% slider)
+        float music = PlayerPrefs.GetFloat("MusicVol", 0.75f);
+        float sfx = PlayerPrefs.GetFloat("SFXVol", 0.75f);
+        float voice = PlayerPrefs.GetFloat("VoiceVol", 0.75f);
 
         // Update UI Elements
         if(musicSlider) musicSlider.value = music;
@@ -62,21 +65,22 @@ public class SettingsMenuController : MonoBehaviour
         SetQuality(quality);
     }
 
+    // This converts the 0-1 slider value to a -80 to 0 dB value logarithmicly
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", volume);
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("MusicVol", volume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("sfxVolume", volume);
+        audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVol", volume);
     }
 
     public void SetVoiceVolume(float volume)
     {
-        audioMixer.SetFloat("voiceVolume", volume);
+        audioMixer.SetFloat("voiceVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("VoiceVol", volume);
     }
 
