@@ -32,19 +32,28 @@ public class AudioTriggerScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasPlayed)
         {
+            Debug.Log("Triggered by Player!"); // See if this appears
             audioSource.Play();
 
             if (subtitleCanvasGameObject != null)
             {
+                Debug.Log("Showing Canvas...");
                 subtitleCanvasGameObject.SetActive(true);
             }
+            else {
+                Debug.LogError("SUBTITLE CANVAS IS MISSING FROM THE INSPECTOR!");
+            }
+
             if (subtitleText != null)
             {
+                Debug.Log("Updating Text...");
                 subtitleText.text = voiceline;
+            }
+            else {
+                Debug.LogError("SUBTITLE TEXT IS MISSING FROM THE INSPECTOR!");
             }
 
             Invoke("HideCanvasAndClearText", audioSource.clip.length);
-
             hasPlayed = true;
         }
     }
