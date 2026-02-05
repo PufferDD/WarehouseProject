@@ -41,8 +41,7 @@ public class PauseMenuController : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; // Stop time
         isPaused = true;
-
-        // Added code for cursor visibility and lock state in PauseGame
+        AudioListener.pause = true; // Pause all audio
         Cursor.visible = true; // Make cursor visible
         Cursor.lockState = CursorLockMode.None; // Unlock cursor
     }
@@ -52,7 +51,7 @@ public class PauseMenuController : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; // Resume time
         isPaused = false;
-        // Added code for cursor visibility and lock state in ResumeGame
+        AudioListener.pause = false; // Resume all audio
         Cursor.visible = false; // Hide cursor when resuming game
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center
     }

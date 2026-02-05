@@ -45,32 +45,36 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
     }
 
-    // --- UPDATED SETTINGS MENU LOGIC ---
     public void SettingMenu()
     {
-        Debug.Log("Opening Settings Menu...");
-        
-        // 1. Save the current scene name before we leave
         previousSceneName = SceneManager.GetActiveScene().name;
         
-        // 2. Load the Settings Scene
-        SceneManager.LoadScene("SettingsMenu");
+        if (previousSceneName == "TitleScene") 
+        {
+            // From Title: Just switch scenes normally
+            SceneManager.LoadScene("SettingsMenu");
+        }
+        else 
+         {
+            // If we are IN GAME:
+            // Pause the game world (Stop time)
+            Time.timeScale = 0f;
+
+            // Unlock the cursor so the player can click buttons
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            // Load settings on top of the game
+            SceneManager.LoadScene("SettingsMenu", LoadSceneMode.Additive);
+        }
     }
 
-    // --- NEW GO BACK LOGIC ---
     public void GoBack()
     {
-        Debug.Log("Going back...");
+            //  Remove the settings overlay
+            SceneManager.UnloadSceneAsync("SettingsMenu");
 
-        if (!string.IsNullOrEmpty(previousSceneName))
-        {
-            // Load the scene we came from
-            SceneManager.LoadScene(previousSceneName);
-        }
-        else
-        {
-            // Fallback: If for some reason history is empty, go to Main Menu
-            SceneManager.LoadScene("TitleScene");
-        }
+            // Unpause the game (Resume time)
+            Time.timeScale = 1f;
     }
 }
