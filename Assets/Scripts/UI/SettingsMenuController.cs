@@ -11,7 +11,7 @@ public class SettingsMenuController : MonoBehaviour
     public TMP_Dropdown qualityDropdown;
     public Slider musicSlider, sfxSlider, voiceSlider;
     public Toggle fullscreenToggle;
-
+ 
     Resolution[] resolutions;
 
     void Start()
