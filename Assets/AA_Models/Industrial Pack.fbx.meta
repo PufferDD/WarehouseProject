@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: 339b728a86a7b024fa5bc375c7ae4d72
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T.G.Cylinder
+    second: {fileID: 2100000, guid: c1bcc5d28ff653742a3c6dbeca933c23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T.G.Cylinder2
+    second: {fileID: 2100000, guid: 98461c20aa8df2440a46e95b362c8c4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T.G.Cylinder3
+    second: {fileID: 2100000, guid: 3efc784956b727e46b3478847c7604aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden Box
+    second: {fileID: 2100000, guid: 53a95ac9721bdaf41bcac86a74a25758, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrel
+    second: {fileID: 2100000, guid: fdca9c11b4dded748ab0c07d8bc0dc1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrel2
+    second: {fileID: 2100000, guid: 735d44f70f73ecf419439cafaac6b4b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrel3
+    second: {fileID: 2100000, guid: 2fadb77a276c6c342a6c660e5c434209, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrel4
+    second: {fileID: 2100000, guid: e8299318a2603db41b96e24a02dc54db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: can
+    second: {fileID: 2100000, guid: 6949926252a2cde4e8a82bcc66ec0403, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: can2
+    second: {fileID: 2100000, guid: 1075a863093d59c44abc36a5fa4d7a94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: can3
+    second: {fileID: 2100000, guid: e3fc2cb2f00b1e545b912d3cce9a4962, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap
+    second: {fileID: 2100000, guid: 1826b0b80ea0b24498dddda426bbbda8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.barrel
+    second: {fileID: 2100000, guid: 84fec360103c2b44a988cedf0a2bbb7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.barrel2
+    second: {fileID: 2100000, guid: f1575c140164a054aa271235084fb01f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.barrel3
+    second: {fileID: 2100000, guid: 17405fd80c491a0409b77d1ecf9094ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.barrel4
+    second: {fileID: 2100000, guid: 4ea9f2d8668151c449badadfe51366c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.base
+    second: {fileID: 2100000, guid: be6ca93a3df5b6a45a48967573bde002, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.base2
+    second: {fileID: 2100000, guid: 2e304099958786a46a84855c886360c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.base3
+    second: {fileID: 2100000, guid: 08f568f7cbb4c0042ad3a5bfca23587c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.base4
+    second: {fileID: 2100000, guid: 2e4e6fbc674a73347a6b7a5f7fcc97dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.rim
+    second: {fileID: 2100000, guid: 3d06c24b7bf3692418bd735257cb3cad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.rim2
+    second: {fileID: 2100000, guid: 16eb6ebda6c0aa7409c1b8c943a3f43f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap.rim3
+    second: {fileID: 2100000, guid: 8fe0910b556dde241a466062e8a379ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap2
+    second: {fileID: 2100000, guid: a04d6824cfc93f7468d6b9e7bb4c3e4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap3
+    second: {fileID: 2100000, guid: 3b0cb2570e33930498fe4dfb76968e5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cylinder.small1
+    second: {fileID: 2100000, guid: e6006a0bb9c45994cb79fb6319374c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cylinder.small2
+    second: {fileID: 2100000, guid: 1658ddda548597d4db8e1c176cfcde5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cylinder.small3
+    second: {fileID: 2100000, guid: e793be942bec08247838890ab40e547c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial
+    second: {fileID: 2100000, guid: c419161f8c33e3d4d887c3d3a0b207c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial.rim
+    second: {fileID: 2100000, guid: 71c189e57e2495f4fbd0887927850415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial.rim2
+    second: {fileID: 2100000, guid: 74aeb3075e694784780da64d800ebffa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial.rim3
+    second: {fileID: 2100000, guid: fc990be2acae57a40a35db941988d9d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial2
+    second: {fileID: 2100000, guid: 868bbeb547563a0419c214d51c889f5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dial3
+    second: {fileID: 2100000, guid: 152828e43192f244b953df6560a744f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handle
+    second: {fileID: 2100000, guid: a2a6f116a628f4a41b70adaf0e645661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handle2
+    second: {fileID: 2100000, guid: a6326c87dd662b24592c9726acd95e1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handle3
+    second: {fileID: 2100000, guid: 52a060998041bdd4090d21cd5641564a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pallet
+    second: {fileID: 2100000, guid: e7bb29933a1b8204d8c9ac16dfebe166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rim.small2
+    second: {fileID: 2100000, guid: 5d0b2787fb269f6459cc0e8054aeddef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rim.small3
+    second: {fileID: 2100000, guid: 616b3a19de59a774b874c458256d12d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rim1
+    second: {fileID: 2100000, guid: 92b3ab0036da3e4449e822ff2968f33d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap
+    second: {fileID: 2100000, guid: b76fce816bdf5c442a028fe95a479306, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap.small2
+    second: {fileID: 2100000, guid: 4b7368f2d163b8e428039703cb75da92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap.small3
+    second: {fileID: 2100000, guid: e73a074d2e9584446a9c3bbd0ea448c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap1
+    second: {fileID: 2100000, guid: 90388b1f9336fcb4ca8c4a61efc91cd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap2
+    second: {fileID: 2100000, guid: f48243acdf155b641a3b3e52ced3ac66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tap3
+    second: {fileID: 2100000, guid: de2e77c31eb1ab34eb3ae167a6736cb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve
+    second: {fileID: 2100000, guid: fe6c81c54651e9d488ac7ec05235fe83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve.small2
+    second: {fileID: 2100000, guid: 005f52a38ab0e0c4c9dcc0d57f55a9c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve.small3
+    second: {fileID: 2100000, guid: 61ad68bdfb9ba8c4aa3019bde085b3b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve1
+    second: {fileID: 2100000, guid: 7d85c37a9ed6b5346b645296b5830f5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve2
+    second: {fileID: 2100000, guid: a7e3bad52afbf4448979e5f0839c7036, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: valve3
+    second: {fileID: 2100000, guid: cf3e6f265f43e7b4c8f3f5d95e6344e5, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
