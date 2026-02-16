@@ -4,19 +4,21 @@ using UnityEngine.SceneManagement;
 public class AudioTrigger : MonoBehaviour
 {
     [Header("Audio Clip Indices (Reference AudioManager)")]
-    [SerializeField] private int _officeVoiceClipIndex = -1; // Assign index for Office voice clip in AudioManager
-    [SerializeField] private int _gameVoiceClipIndex = -1;   // Assign index for Game voice clip in AudioManager
+    [SerializeField] private int _officeVoiceClipIndex = -1;
+    [SerializeField] private int _gameVoiceClipIndex = -1;
 
     [Header("Voicelines (Text to display for subtitles)")]
-    [SerializeField, TextArea(3, 10)] 
-    private string _officeVoicelineText = "Hello there, new hire. Welcome to the main office. "
-                                        + "Please proceed to your assigned workstation and begin your orientation.";
+    [SerializeField, TextArea(3, 10)]
+    private string _officeVoicelineText =
+        "Hello there, new hire. Welcome to the main office. " +
+        "Please proceed to your assigned workstation and begin your orientation.";
 
-    [SerializeField, TextArea(3, 10)] 
-    private string _gameVoicelineText = "Welcome Employee number 32040. "
-                                      + "Your task for today is: Warehouse duties. "
-                                      + "Please sort warehouse number 240 into an optimal condition. "
-                                      + "Have a great work day and remember to stay positive.";
+    [SerializeField, TextArea(3, 10)]
+    private string _gameVoicelineText =
+        "Welcome Employee number 32040. " +
+        "Your task for today is: Warehouse duties. " +
+        "Please sort warehouse number 240 into an optimal condition. " +
+        "Have a great work day and remember to stay positive.";
 
     [Header("Settings")]
     [SerializeField] private float _speakDistance = 5f;
@@ -26,29 +28,35 @@ public class AudioTrigger : MonoBehaviour
 
     private void Start()
     {
-        // Find the player GameObject. You might have a more robust way to do this.
-        GameObject playerGO = GameObject.FindWithTag("Player"); 
-        if (playerGO != null)
-        {
-            _playerTransform = playerGO.transform;
-        }
-        else
-        {
-            Debug.LogError("Player GameObject not found! Make sure your player has the 'Player' tag.");
-            enabled = false; // Disable this script if no player is found
-        }
+        TryFindPlayer(); // ÄLÄ disabletä scriptiä jos player ei löydy heti
     }
 
     private void Update()
     {
-        if (_playerTransform == null || _hasSpoken) return;
+        if (_hasSpoken) return;
 
-        // Check the distance between the robot and the player
+        // Player voi spawnata vasta hetken päästä
+        if (_playerTransform == null)
+        {
+            TryFindPlayer();
+            return;
+        }
+
         if (Vector3.Distance(transform.position, _playerTransform.position) <= _speakDistance)
         {
             Speak();
-            _hasSpoken = true; // Ensure it only speaks once
+            _hasSpoken = true;
         }
+    }
+
+    private void TryFindPlayer()
+    {
+        var playerGO = GameObject.FindWithTag("Player");
+        if (playerGO != null)
+        {
+            _playerTransform = playerGO.transform;
+        }
+        // EI elseä, EI disabled
     }
 
     private void Speak()
@@ -60,9 +68,9 @@ public class AudioTrigger : MonoBehaviour
         }
 
         string currentSceneName = SceneManager.GetActiveScene().name;
-        int clipIndexToPlay = -1;
-        string textToDisplay = "";
-        AudioClip actualClip = null; // To hold the retrieved clip
+
+        int clipIndexToPlay;
+        string textToDisplay;
 
         if (currentSceneName == "OfficeScene")
         {
@@ -76,38 +84,28 @@ public class AudioTrigger : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("RobotSpeaker is in an unrecognized scene: " + currentSceneName);
-            return; // Don't try to play or show subtitles if scene is unrecognized
+            Debug.LogWarning("AudioTrigger is in an unrecognized scene: " + currentSceneName);
+            return;
         }
 
-        // Attempt to get the actual clip using the new public method
-        actualClip = AudioManager.Instance.GetVoiceClip(clipIndexToPlay);
+        // Hae clip (voi olla null jos index väärin)
+        AudioClip actualClip = AudioManager.Instance.GetVoiceClip(clipIndexToPlay);
 
-        // Play the audio clip using the AudioManager if a valid index was provided and clip exists
-        if (actualClip != null) // Check if the clip was successfully retrieved
+        if (actualClip != null)
         {
-            AudioManager.Instance.PlayVoiceClip(clipIndexToPlay); // Play using the index
-            
-            // Show subtitles using the SubtitleManager
+            AudioManager.Instance.PlayVoiceClip(clipIndexToPlay);
+
             if (SubtitleManager.Instance != null)
-            {
                 SubtitleManager.Instance.ShowSubtitle(textToDisplay, actualClip.length);
-            }
-            Debug.Log($"Robot speaking in {currentSceneName}: {textToDisplay}");
         }
         else
         {
-            Debug.LogWarning($"No valid Voice Clip found for index {clipIndexToPlay} in {currentSceneName}. Still showing text: {textToDisplay}");
-            // Even if no audio clip, show the text for a default duration if subtitle manager exists
+            Debug.LogWarning($"No valid Voice Clip found for index {clipIndexToPlay} in {currentSceneName}. Showing text anyway.");
             if (SubtitleManager.Instance != null)
-            {
-                // If no clip, maybe show for a fixed duration like 5 seconds, or based on text length
-                SubtitleManager.Instance.ShowSubtitle(textToDisplay, 5.0f); 
-            }
+                SubtitleManager.Instance.ShowSubtitle(textToDisplay, 5f);
         }
     }
 
-    // Optional: Draw a sphere in the editor to visualize the speak distance
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
