@@ -1,24 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections; // Required for Coroutines
+using System.Collections.Generic;
 
 public class AudioTrigger : MonoBehaviour
 {
+    [System.Serializable]
+    public struct SubtitlePart
+    {
+        [TextArea(3, 5)] public string text;
+        public float duration; // How long this part stays on screen
+    }
+
     [Header("Audio Clip Indices (Reference AudioManager)")]
     [SerializeField] private int _officeVoiceClipIndex = -1;
     [SerializeField] private int _gameVoiceClipIndex = -1;
 
-    [Header("Voicelines (Text to display for subtitles)")]
-    [SerializeField, TextArea(3, 10)]
-    private string _officeVoicelineText =
-        "Hello there, new hire. Welcome to the main office. " +
-        "Please proceed to your assigned workstation and begin your orientation.";
-
-    [SerializeField, TextArea(3, 10)]
-    private string _gameVoicelineText =
-        "Welcome Employee number 32040. " +
-        "Your task for today is: Warehouse duties. " +
-        "Please sort warehouse number 240 into an optimal condition. " +
-        "Have a great work day and remember to stay positive.";
+    [Header("Voicelines (Split into parts)")]
+    [SerializeField] private List<SubtitlePart> _officeVoicelines;
+    [SerializeField] private List<SubtitlePart> _gameVoicelines;
 
     [Header("Settings")]
     [SerializeField] private float _speakDistance = 5f;
@@ -68,19 +68,18 @@ public class AudioTrigger : MonoBehaviour
         }
 
         string currentSceneName = SceneManager.GetActiveScene().name;
-
         int clipIndexToPlay;
-        string textToDisplay;
+        List<SubtitlePart> linesToDisplay;
 
         if (currentSceneName == "OfficeScene")
         {
             clipIndexToPlay = _officeVoiceClipIndex;
-            textToDisplay = _officeVoicelineText;
+            linesToDisplay = _officeVoicelines;
         }
         else if (currentSceneName == "GameScene")
         {
             clipIndexToPlay = _gameVoiceClipIndex;
-            textToDisplay = _gameVoicelineText;
+            linesToDisplay = _gameVoicelines;
         }
         else
         {
@@ -88,21 +87,25 @@ public class AudioTrigger : MonoBehaviour
             return;
         }
 
-        // Hae clip (voi olla null jos index väärin)
-        AudioClip actualClip = AudioManager.Instance.GetVoiceClip(clipIndexToPlay);
+        // Play the audio
+        AudioManager.Instance.PlayVoiceClip(clipIndexToPlay);
 
-        if (actualClip != null)
+        // Start showing the split subtitles
+        if (SubtitleManager.Instance != null && linesToDisplay != null && linesToDisplay.Count > 0)
         {
-            AudioManager.Instance.PlayVoiceClip(clipIndexToPlay);
-
-            if (SubtitleManager.Instance != null)
-                SubtitleManager.Instance.ShowSubtitle(textToDisplay, actualClip.length);
+            StartCoroutine(ShowSubtitlesSequentially(linesToDisplay));
         }
-        else
+    }
+
+    private IEnumerator ShowSubtitlesSequentially(List<SubtitlePart> parts)
+    {
+        foreach (var part in parts)
         {
-            Debug.LogWarning($"No valid Voice Clip found for index {clipIndexToPlay} in {currentSceneName}. Showing text anyway.");
-            if (SubtitleManager.Instance != null)
-                SubtitleManager.Instance.ShowSubtitle(textToDisplay, 5f);
+            // Show the current part
+            SubtitleManager.Instance.ShowSubtitle(part.text, part.duration);
+            
+            // Wait for the duration of this part before showing the next one
+            yield return new WaitForSeconds(part.duration);
         }
     }
 

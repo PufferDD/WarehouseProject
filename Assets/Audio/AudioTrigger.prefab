@@ -127,8 +127,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioTrigger
   _officeVoiceClipIndex: 0
   _gameVoiceClipIndex: 1
-  _officeVoicelineText: Hello there etc etc
-  _gameVoicelineText: 'Welcome Employee number 32040. Your task for today is: Warehouse
-    duties. Please sort warehouse number 240 into an optimal condition. Have a great
-    work day and remember to stay positive.'
+  _officeVoicelines:
+  - text: Welcome to Zeta Technica. You are now one of 102,407 active units contributing
+      to our success. We are glad you've joined us.
+    duration: 12
+  - text: ' By accepting this job you have officially acknowledged receipt of the
+      400-page employee handbook and waived your right to natural sunlight.'
+    duration: 8
+  - text: Management is not responsible for any bodily harm. Please enjoy your first
+      day and remember to stay positive.
+    duration: 6
+  _gameVoicelines: []
   _speakDistance: 5
