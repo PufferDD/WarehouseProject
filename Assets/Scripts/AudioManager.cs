@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -28,16 +29,41 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log($"AudioManager Awake — _instance is {(_instance == null ? "null" : "SET")}, this={GetInstanceID()}");
+
         if (_instance != null && _instance != this)
         {
+            Debug.Log($"Duplicate detected, destroying {GetInstanceID()}");
+            _instance.OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
             Destroy(gameObject);
             return;
         }
         _instance = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log($"OnSceneLoaded fired — scene={scene.name}, _instance={(_instance == null ? "null" : _instance.GetInstanceID())}");
+
+        if (scene.name == "OfficeScene")
+            PlayMusicClip(0, true);
+        else if (scene.name == "GameScene")
+            PlayMusicClip(1, true);
+        else if (scene.name == "TitleScene" || scene.name == "SettingsScene")
+        {
+            if (_musicAudioSource.clip != _musicClip[2] || !_musicAudioSource.isPlaying)
+                PlayMusicClip(2, true);
+        }
+    }
+    private void OnDestroy()
+    {
+        Debug.Log($"OnDestroy called on {GetInstanceID()}, _instance is {(_instance == null ? "null" : _instance.GetInstanceID().ToString())}");
+        if (_instance == this)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // --- New Public Method to get a Voice Clip ---
     public AudioClip GetVoiceClip(int index)
     {
         if (index >= 0 && index < _voiceClip.Length)
@@ -47,11 +73,12 @@ public class AudioManager : MonoBehaviour
         Debug.LogWarning($"Attempted to get Voice clip at invalid index: {index}. Array size: {_voiceClip.Length}");
         return null;
     }
-    // ---------------------------------------------
 
 
     public void PlayMusicClip(int value, bool loop = false)
     {
+        Debug.Log($"PlayMusicClip({value}) — clip={(_musicClip[value] == null ? "NULL" : _musicClip[value].name)}, source={(_musicAudioSource == null ? "NULL" : "OK")}, listenerPaused={AudioListener.pause}");
+
         if (value < 0 || value >= _musicClip.Length)
         {
             _musicAudioSource.Pause();

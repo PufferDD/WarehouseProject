@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Starting Game...");
-        SceneManager.LoadScene("OfficeScene"); 
+        SceneManager.LoadScene("OfficeScene");
     }
 
     public void QuitGame()
@@ -42,20 +42,21 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Returning to Main Menu...");
         Time.timeScale = 1f;
+        AudioListener.pause = false;
         SceneManager.LoadScene("TitleScene");
     }
 
-    public void SettingMenu()
+    public void SettingScene()
     {
         previousSceneName = SceneManager.GetActiveScene().name;
-        
-        if (previousSceneName == "TitleScene")  
+
+        if (previousSceneName == "TitleScene")
         {
             // From Title: Just switch scenes normally
-            SceneManager.LoadScene("SettingsMenu");
+            SceneManager.LoadScene("SettingsScene");
         }
-        else 
-         {
+        else
+        {
             // If we are IN GAME:
             // Pause the game world (Stop time)
             Time.timeScale = 0f;
@@ -65,7 +66,7 @@ public class ButtonManager : MonoBehaviour
             Cursor.visible = true;
 
             // Load settings on top of the game
-            SceneManager.LoadScene("SettingsMenu", LoadSceneMode.Additive);
+            SceneManager.LoadScene("SettingsScene", LoadSceneMode.Additive);
         }
     }
 
@@ -76,13 +77,11 @@ public class ButtonManager : MonoBehaviour
         if (SceneManager.sceneCount > 1)
         {
             Debug.Log("Unloading Settings overlay...");
-            SceneManager.UnloadSceneAsync("SettingsMenu");
+            SceneManager.UnloadSceneAsync("SettingsScene");
 
             // Unpause the game (Resume time)
             Time.timeScale = 1f;
-            
-            // Note: If you locked the cursor in your game, 
-            // you might want to re-lock it here.
+
         }
         else
         {
@@ -91,4 +90,5 @@ public class ButtonManager : MonoBehaviour
             Debug.Log("Returning to Title Scene...");
             SceneManager.LoadScene("TitleScene");
         }
-    }}
+    }
+}

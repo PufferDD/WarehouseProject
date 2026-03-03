@@ -660,7 +660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 431062458}
   - component: {fileID: 431062457}
-  - component: {fileID: 431062456}
   - component: {fileID: 431062459}
   m_Layer: 0
   m_Name: Main Camera
@@ -669,14 +668,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &431062456
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431062455}
-  m_Enabled: 1
 --- !u!20 &431062457
 Camera:
   m_ObjectHideFlags: 0
@@ -813,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230431870122619323, guid: d76952321782b964983e82eabf40ad61, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SettingMenu
+      value: SettingScene
       objectReference: {fileID: 0}
     - target: {fileID: 5230431870122619323, guid: d76952321782b964983e82eabf40ad61, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1400,6 +1391,7 @@ MonoBehaviour:
   _musicClip:
   - {fileID: 8300000, guid: d93e6cfba50b1404e9defdde3d61d02e, type: 3}
   - {fileID: 8300000, guid: daf97d15f684f794a9341b00d60f268a, type: 3}
+  - {fileID: 8300000, guid: d3f774cade381ad4787ac0b012bc259b, type: 3}
   _voiceClip:
   - {fileID: 8300000, guid: 632e749c0151ebc49906ce250465f326, type: 3}
   - {fileID: 8300000, guid: 3892863143a02da44b3ca31fddb98775, type: 3}
@@ -1407,20 +1399,14 @@ MonoBehaviour:
   _sfxAudioSource: {fileID: 300412169}
   _musicAudioSource: {fileID: 1534443315}
   _voiceAudioSource: {fileID: 1518219941}
---- !u!114 &1743511406
-MonoBehaviour:
+--- !u!81 &1743511406
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743511403}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20719e0a108623b47a535cc59107132d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicController
-  officeMusicIndex: 0
-  gameMusicIndex: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -41,9 +41,14 @@ public class PauseMenuController : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; // Stop time
         isPaused = true;
-        AudioListener.pause = true; // Pause all audio
-        Cursor.visible = true; // Make cursor visible
         Cursor.lockState = CursorLockMode.None; // Unlock cursor
+        Cursor.visible = true; // Show cursor when paused
+        // AudioListener.pause = true; // Pause all audio
+        if (AudioManager.Instance != null)  
+        {
+            AudioManager.Instance.PlayMusicClip(2, true); // menu music
+        }
+
     }
 
     public void ResumeGame()
@@ -51,8 +56,12 @@ public class PauseMenuController : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; // Resume time
         isPaused = false;
-        AudioListener.pause = false; // Resume all audio
+        // AudioListener.pause = false; // Resume all audio
         Cursor.visible = false; // Hide cursor when resuming game
         Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusicClip(1, true); // game music
+        }
     }
 }
